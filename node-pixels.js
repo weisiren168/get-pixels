@@ -29,7 +29,7 @@ function handlePNG(data, cb) {
 function handleJPEG(data, cb) {
   var jpegData
   try {
-    jpegData = jpeg.decode(data)
+    jpegData = jpeg.decode(data, { maxMemoryUsageInMB: 1024 })
   }
   catch(e) {
     cb(e)
